@@ -1,0 +1,36 @@
+/* 전체 페이지를 최소한 전체 높이로 설정 */
+html, body, #root, .root-wrap {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 푸터 스타일 */
+.footer-wrap {
+    background-color: #2c2c2c;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: auto;  /* 자동으로 하단으로 밀려나도록 설정 */
+}
+
+/* 각 p 태그 스타일 */
+.footer-wrap p {
+    margin: 5px 0;
+}
+
+/* 이메일 스타일 */
+.footer-wrap p:last-child {
+    font-weight: bold;
+    color: #ffd700; /* 포켓몬 스타일의 노란색 */
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .footer-wrap {
+        font-size: 12px;
+    }
+}

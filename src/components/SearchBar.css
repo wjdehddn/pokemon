@@ -1,0 +1,16 @@
+.searchbar {
+    margin-bottom: 20px;
+}
+
+.searchbar input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 18px;
+}
+
+@media (max-width: 350px) {
+    .searchbar input {
+        width: 140px;
+    }
+}

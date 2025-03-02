@@ -1,0 +1,138 @@
+.filter-container {
+  width: 100%;
+}
+
+.search-toggle {
+  display: none;
+  background-color: #FFD700;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* 기본적으로 패널 보이도록 설정 */
+.filter-panel {
+  padding: 20px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.select-all-label,
+.type-label {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 11.073070293%;
+  cursor: pointer;
+}
+
+.type-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.type-checkbox,
+.select-all-checkbox {
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 25%;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  margin-right: 10px;
+}
+
+.type-checkbox:checked,
+.select-all-checkbox:checked {
+  background-color: #FFD700;
+  border-color: #FFD700;
+}
+
+.type-checkbox:checked::after,
+.select-all-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFD700;
+  border-radius: 4px;
+}
+
+.type-checkbox:hover,
+.select-all-checkbox:hover {
+  border-color: #FFD700;
+}
+
+.type-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  display: inline-block;
+  border-radius: 25%;
+}
+
+/* 1725px 이하에서 체크박스, 이미지 크기 조정 */
+@media (max-width: 1725px) {
+  .type-checkbox, .select-all-checkbox {   
+    width: 25px;
+    height: 25px;
+  }
+
+  .type-image {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* 1300px 이하일 때 상세검색 버튼 보이게 설정 */
+@media (max-width: 1300px) {
+  .search-toggle {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .filter-panel.closed {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  .filter-panel.open {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .select-all-label, .type-label {
+    width: 16.6666666667%;
+  }
+}
+
+@media (max-width: 900px) {
+  .select-all-label, .type-label {
+    width: 33.3333333333%;
+  }
+}
+
+@media (max-width: 460px) {
+  .type-label p {
+    display: none;
+  }
+}

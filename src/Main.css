@@ -1,0 +1,247 @@
+/* 메인 컨테이너 */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 공통 섹션 스타일 */
+.section {
+  width: 90%;
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+
+/* 섹션1: 메인 배경 + Pokémon 애니메이션 */
+.main-section {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://e1.pxfuel.com/desktop-wallpaper/900/152/desktop-wallpaper-pokemon-full-and-backgrounds-pokemon-1920x1080.jpg") no-repeat center center/cover;
+  overflow: hidden;
+}
+
+.pokemon-title {
+  position: absolute;
+  font-size: 80px;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 섹션2: 도감 리스트 스타일 */
+.pokedex-list {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.pokemon-card {
+  width: 12.8824476651%;
+  margin-right: 1.63714439077%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pokemon-card a p {
+  margin-top: 10px;
+}
+
+.pokemon-card:nth-child(7) {
+  margin-right: 0;
+}
+
+.pokemon-link .pokemon-img {
+  width: 100px;
+  height: 100px;
+}
+
+.pokemon-link h3 {
+  font-size: 16px;
+}
+
+.pokemon-link p span {
+  font-size: 16px;
+}
+
+.bookmark-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* 공통 버튼 스타일 */
+.section-button, .team-button, .quiz-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+/* 도감, 속성 버튼 */
+.section-button {
+  background-color: #007bff;
+  margin-top: 20px;
+}
+
+.section-button:hover {
+  background-color: #005bb5;
+}
+
+.attributes-section h2 {
+  margin-bottom: 20px;
+}
+
+.attribute {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.attribute .type-con {
+  width: 11%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* 섹션4: 팀 및 퀴즈 버튼 */
+.team-quiz-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.team-section {
+  width: 50%;
+}
+
+.team-section img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.quiz-section {
+  width: 50%;
+}
+
+.quiz-sec-img-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.quiz-section img {
+  border-radius: 8px;
+  width: 57%;
+  height: 57%;
+}
+
+.team-button {
+  background-color: #28a745;
+  margin-top: 20px;
+}
+
+.team-button:hover {
+  background-color: #1f8a34;
+}
+
+.quiz-button {
+  background-color: #ffc107;
+  margin-top: 20px;
+}
+
+.quiz-button:hover {
+  background-color: #e0a800;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1725px) {
+  .pokemon-card {
+    width: 19.3955283275%;
+    margin-right: 0.75558959062%;
+  }
+
+  .pokemon-card:nth-child(5) {
+    margin-right: 0;
+  }
+
+  .pokemon-card:nth-child(6) {
+    display: none;
+  }
+
+  .pokemon-card:nth-child(7) {
+    display: none;
+  }
+}
+
+@media (max-width: 1300px) {
+  .pokemon-card {
+    width: 49.4297603106%;
+    margin-right: 1.1404793788%;
+  }
+
+  .pokemon-card:nth-child(2) {
+    margin-right: 0;
+  }
+
+  .pokemon-card:nth-child(3) {
+    display: none;
+  }
+
+  .pokemon-card:nth-child(4) {
+    display: none;
+  }
+
+  .pokemon-card:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .attribute .type-con {
+    width: 16%;
+  }
+
+  .attribute .type-con .type-img {
+    padding: 5px;
+  }
+
+  .attribute .type-con .type-img img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    height: 70vh;
+  }
+
+  .pokemon-title {
+    font-size: 40px;
+  }
+
+  .team-quiz-section {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+}

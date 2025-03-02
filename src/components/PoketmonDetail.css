@@ -1,0 +1,72 @@
+.pokemon-detail {
+  width: 90%;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center; /* 이미지와 텍스트를 수직 정렬 */
+  gap: 20px; /* 이미지와 내용 사이 여백 */
+}
+  
+.pokemon-detail img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-right: 40px;
+}
+
+.pokemon-detail .moveBtn {
+  margin-top: auto;
+  margin-left: auto;
+}
+  
+.pokemon-info {
+  flex: 1; /* 내용이 이미지 옆에서 자연스럽게 늘어나도록 */
+  text-align: left;
+  max-width: 1000px;
+}
+  
+.pokemon-info h1 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+  
+.pokemon-info p {
+  font-size: 14px;
+  line-height: 30px;
+  color: #444;
+}
+  
+.pokemon-info strong {
+  color: #222;
+}
+  
+.pokemon-info {
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .pokemon-detail {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pokemon-detail img {
+    margin-right: 0;
+  }
+}
+
+@media (max-width:450px) {
+  .pokemon-detail img {
+    width: 300px;
+    height: 300px;
+  }
+}
