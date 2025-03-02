@@ -15,7 +15,7 @@
 - 퀴즈 게임  
 - 반응형 UI 지원  
 
-🔗 [프로젝트 링크](https://pokemon-pi-navy.vercel.app/encyclopedia) | [GitHub](https://github.com/wjdehddn/pokemon))  
+🔗 [프로젝트 링크](https://pokemon-pi-navy.vercel.app/encyclopedia) | [GitHub](https://github.com/wjdehddn/pokemon)
 
 ---
 
