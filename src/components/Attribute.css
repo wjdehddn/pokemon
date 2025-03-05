@@ -47,13 +47,17 @@
     border-radius: 4px;
     gap: 20px;
     padding: 0 10px;
-    min-width: 90px;
 }
 
 .type-strong {
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 10px;
+}
+
+.type-strong > div:nth-child(1) {
+    margin-bottom: 10px;
+    font-size: 28px;
 }
 
 .type-strong img {
@@ -137,7 +141,6 @@
 
 .modal-content .type {
     justify-content: center;
-    min-height: 120px;
 }
 
 .modal-content .type .type-strong {
@@ -210,7 +213,6 @@
 
     .modal-content .type {
         gap: 7px;
-        min-height: 90px;
     }
 
     .modal-content .type .type-strong {

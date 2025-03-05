@@ -158,22 +158,27 @@ const Attribute = () => {
                 <h3>{type.type_ko}</h3>
               </div>
               <div className="type">
-                {Object.entries(type.typeDamage_ko)
-                  .filter(([_, multiplier]) => multiplier > 1)
-                  .map(([strongType, _]) => {
-                    const strongTypeData = typeData.find((t) => t.type_ko === strongType);
-                    return strongTypeData ? (
-                      <div className="type-strong" key={strongType}>
-                        <img src={strongTypeData.img_path} alt={strongType} />
-                        <div>{strongType}</div>
-                      </div>
-                    ) : (
-                      <div className="type-strong" key={strongType}>
-                        <div>X</div>
-                        <div>없음</div>
-                      </div>
-                    );
-                  })}
+                {(() => {
+                  const strongTypes = Object.entries(type.typeDamage_ko)
+                    .filter(([_, multiplier]) => multiplier > 1)
+                    .map(([strongType]) => {
+                      const strongTypeData = typeData.find((t) => t.type_ko === strongType);
+                      return strongTypeData ? (
+                        <div className="type-strong" key={strongType}>
+                          <img src={strongTypeData.img_path} alt={strongType} />
+                          <div>{strongType}</div>
+                        </div>
+                      ) : null; // 🔹 strongTypeData가 없으면 렌더링하지 않음
+                    })
+                    .filter(Boolean); // 🔹 null 값을 제거하여 불필요한 렌더링 방지
+
+                  return strongTypes.length > 0 ? strongTypes : (
+                    <div className="type-strong">
+                      <div>X</div>
+                      <div>없음</div>
+                    </div>
+                  );
+                })()}
               </div>
             </div>
           ))}
@@ -187,22 +192,26 @@ const Attribute = () => {
             <button className="close-btn" onClick={closeModal}>닫기</button>
             <h3>{modalType.type_ko}</h3>
             <div className="type">
-              {Object.entries(modalType.typeDamage_ko)
-                .filter(([_, multiplier]) => multiplier > 1)
-                .map(([strongType, _]) => {
-                  const strongTypeData = typeData.find((t) => t.type_ko === strongType);
-                  return strongTypeData ? (
-                    <div className="type-strong" key={strongType}>
-                      <img src={strongTypeData.img_path} alt={strongType} />
-                      <div>{strongType}</div>
-                    </div>
-                  ) : (
-                    <div className="type-strong" key={strongType}>
-                      <div>X</div>
-                      <div>없음</div>
-                    </div>
-                  );
-                })}
+              {(() => {
+                const strongTypes = Object.entries(modalType.typeDamage_ko)
+                  .filter(([_, multiplier]) => multiplier > 1)
+                  .map(([strongType]) => {
+                    const strongTypeData = typeData.find((t) => t.type_ko === strongType);
+                    return strongTypeData ? (
+                      <div className="type-strong" key={strongType}>
+                        <img src={strongTypeData.img_path} alt={strongType} />
+                        <div>{strongType}</div>
+                      </div>
+                    ) : null; // 🔹 strongTypeData가 없으면 아무것도 렌더링하지 않음
+                  });
+
+                return strongTypes.length > 0 ? strongTypes : (
+                  <div className="type-strong">
+                    <div>X</div>
+                    <div>없음</div>
+                  </div>
+                );
+              })()}
             </div>
           </div>
         </div>
